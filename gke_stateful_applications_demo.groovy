@@ -10,6 +10,15 @@ pipelineJob('job-dsl-pipeline-test-again') {
         stringParam('REGION', 'us-west1', 'The region to build the test cluster in')
         stringParam('sha1', '', '')
     }
+
+    triggers {
+        pullRequest {
+            useGitHubHooks()
+            orgWhitelist('H3Lm5m4n')
+        }
+    }
+
+
     definition {
         cpsScm {
             scm {
