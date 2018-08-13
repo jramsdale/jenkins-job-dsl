@@ -12,7 +12,7 @@ pipelineJob('job-dsl-pipeline-test-again') {
     }
 
     triggers {
-        pullRequest {
+        githubPullRequest {
             useGitHubHooks()
             orgWhitelist('H3Lm5m4n')
         }
