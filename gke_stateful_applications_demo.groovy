@@ -8,7 +8,6 @@ pipelineJob('job-dsl-pipeline-test-again') {
         stringParam('CLUSTER_ZONE', 'us-west1-c', 'The zone to build the test cluster in')
         stringParam('PROJECT_ID', 'pso-helmsman-cicd', 'The project to build the test cluster in')
         stringParam('REGION', 'us-west1', 'The region to build the test cluster in')
-        stringParam('sha1', '', '')
     }
 
     triggers {
@@ -26,7 +25,7 @@ pipelineJob('job-dsl-pipeline-test-again') {
                     branch('${sha1}')
                     remote {
                         name('origin')
-                        refspec('+refs/pull/*:refs/remotes/origin/pr/*')
+                        refspec('+refs/pull/${ghprbPullId}/*:refs/remotes/origin/pr/${ghprbPullId}/*')
                         url('https://github.com/GoogleCloudPlatform/gke-stateful-applications-demo.git')
                     }
                 }
