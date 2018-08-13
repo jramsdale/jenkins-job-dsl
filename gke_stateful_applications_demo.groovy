@@ -1,7 +1,7 @@
 pipelineJob('job-dsl-pipeline-test-again') {
 
     properties {
-        githubProjectUrl('https://github.com/GoogleCloudPlatform/gke-stateful-appliations-demo')
+        githubProjectUrl('https://github.com/GoogleCloudPlatform/gke-stateful-applications-demo')
     }
 
     parameters {
