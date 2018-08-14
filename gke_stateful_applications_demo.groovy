@@ -1,22 +1,27 @@
+// Change this
 PROJECT_NAME = 'gke-stateful-applications-demo'
+
+// You don't need to change these
 PROJECT_URL = "https://github.com/GoogleCloudPlatform/${PROJECT_NAME}"
 GIT_URL = "${PROJECT_URL}.git"
-// The name of your job in Jenkins
+
+
 pipelineJob(PROJECT_NAME) {
 
-    // The URL for your project page. Does not include .git
+    // You don't need to change this
     properties {
         githubProjectUrl(PROJECT_URL)
     }
 
-    // These will likely be different per demo. Change these as needed
+    // Change these for your pipelines requirements
     parameters {
+        // parameter, default value, description
         stringParam('CLUSTER_ZONE', 'us-west1-c', 'The zone to build the test cluster in')
         stringParam('PROJECT_ID', 'pso-helmsman-cicd', 'The project to build the test cluster in')
         stringParam('REGION', 'us-west1', 'The region to build the test cluster in')
     }
 
-    // Make sure GoogleCloudPlatform is whitelisted
+    // You don't need to change this
     triggers {
         githubPullRequest {
             useGitHubHooks()
@@ -24,7 +29,7 @@ pipelineJob(PROJECT_NAME) {
         }
     }
 
-
+    // You don't need to change this
     definition {
         cpsScm {
             scm {
