@@ -1,7 +1,7 @@
 pipelineJob('job-dsl-pipeline-test-again') {
 
     properties {
-        githubProjectUrl('https://github.com/GoogleCloudPlatform/gke-stateful-applications-demo')
+        githubProjectUrl('https://github.com/H3Lm5m4n/gke-stateful-applications-demo')
     }
 
     parameters {
@@ -26,7 +26,7 @@ pipelineJob('job-dsl-pipeline-test-again') {
                     remote {
                         name('origin')
                         refspec('+refs/pull/${ghprbPullId}/*:refs/remotes/origin/pr/${ghprbPullId}/*')
-                        url('https://github.com/GoogleCloudPlatform/gke-stateful-applications-demo.git')
+                        url('https://github.com/H3Lm5m4n/gke-stateful-applications-demo.git')
                     }
                 }
 
