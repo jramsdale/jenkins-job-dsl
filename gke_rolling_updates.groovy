@@ -17,8 +17,9 @@ pipelineJob(PROJECT_NAME) {
     parameters {
         // parameter, default value, description
         stringParam('CLUSTER_ZONE', 'us-west1-c', 'The zone to build the test cluster in')
-        stringParam('PROJECT_ID', 'pso-helmsman-cicd', 'The project to build the test cluster in')
+        stringParam('PROJECT_ID', 'pso-helmsman-cicd-infra', 'The project to build the test cluster in')
         stringParam('REGION', 'us-west1', 'The region to build the test cluster in')
+        stringParam('sha1', 'master', '')
     }
 
     // You don't need to change this
